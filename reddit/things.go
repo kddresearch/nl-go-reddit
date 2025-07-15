@@ -527,7 +527,7 @@ type MediaMetadata struct {
 		Height int    `json:"y"`
 		Width  int    `json:"x"`
 		URL    string `json:"u"`
-	}
+	} `json:"s"`
 }
 
 // Post is a submitted post on Reddit.
