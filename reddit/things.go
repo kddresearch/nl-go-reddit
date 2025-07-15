@@ -518,6 +518,18 @@ type More struct {
 	Children []string `json:"children"`
 }
 
+type MediaMetadata struct {
+	Status     string `json:"status"`
+	EntityType string `json:"e"`
+	MimeType   string `json:"m"`
+	ID         string `json:"id"`
+	Source     struct {
+		Height int    `json:"y"`
+		Width  int    `json:"x"`
+		URL    string `json:"u"`
+	}
+}
+
 // Post is a submitted post on Reddit.
 type Post struct {
 	ID      string     `json:"id,omitempty"`
@@ -553,6 +565,8 @@ type Post struct {
 	IsSelfPost bool `json:"is_self"`
 	Saved      bool `json:"saved"`
 	Stickied   bool `json:"stickied"`
+
+	MediaMetadata map[string]MediaMetadata `json:"media_metadata,omitempty"`
 }
 
 // Subreddit holds information about a subreddit
