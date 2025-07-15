@@ -518,6 +518,24 @@ type More struct {
 	Children []string `json:"children"`
 }
 
+type RedditVideo struct {
+	BitrateKbps       int    `json:"bitrate_kbps"`
+	FallbackURL       string `json:"fallback_url"`
+	HasAudio          bool   `json:"has_audio"`
+	Height            int    `json:"height"`
+	Width             int    `json:"width"`
+	ScrubberMediaURL  string `json:"scrubber_media_url"`
+	DashURL           string `json:"dash_url"`
+	Duration          int    `json:"duration"`
+	HLSURL            string `json:"hls_url"`
+	IsGif             bool   `json:"is_gif"`
+	TranscodingStatus string `json:"transcoding_status"`
+}
+
+type SecureMedia struct {
+	RedditVideo *RedditVideo `json:"reddit_video,omitempty"`
+}
+
 type MediaMetadata struct {
 	Status     string `json:"status"`
 	EntityType string `json:"e"`
@@ -567,6 +585,7 @@ type Post struct {
 	Stickied   bool `json:"stickied"`
 
 	MediaMetadata map[string]MediaMetadata `json:"media_metadata,omitempty"`
+	SecureMedia   *SecureMedia             `json:"secure_media,omitempty"`
 }
 
 // Subreddit holds information about a subreddit
