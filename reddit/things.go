@@ -532,8 +532,25 @@ type RedditVideo struct {
 	TranscodingStatus string `json:"transcoding_status"`
 }
 
+type OEmbed struct {
+	AuthorName     string `json:"author_name,omitempty"`
+	AuthorURL      string `json:"author_url,omitempty"`
+	Height         int    `json:"height,omitempty"`
+	Width          int    `json:"width,omitempty"`
+	HTML           string `json:"html,omitempty"`
+	ProviderName   string `json:"provider_name,omitempty"`
+	ProviderUrl    string `json:"provider_url,omitempty"`
+	ThumbnailURL   string `json:"thumbnail_url,omitempty"`
+	ThumbnailWidth int    `json:"thumbnail_width,omitempty"`
+	Title          string `json:"title,omitempty"`
+	Type           string `json:"type,omitempty"`
+	Version        string `json:"version,omitempty"`
+}
+
 type SecureMedia struct {
 	RedditVideo *RedditVideo `json:"reddit_video,omitempty"`
+	OEmbed      *OEmbed      `json:"oembed,omitempty"`
+	Type        string       `json:"type,omitempty"`
 }
 
 type MediaMetadata struct {
