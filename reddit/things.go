@@ -565,6 +565,33 @@ type MediaMetadata struct {
 	} `json:"s"`
 }
 
+type CrosspostParent struct {
+	ID                    string  `json:"id,omitempty"`
+	FullID                string  `json:"name,omitempty"`
+	Subreddit             string  `json:"subreddit,omitempty"`
+	SubredditID           string  `json:"subreddit_id,omitempty"`
+	SubredditNamePrefixed string  `json:"subreddit_name_prefixed,omitempty"`
+	Title                 string  `json:"title,omitempty"`
+	Author                string  `json:"author,omitempty"`
+	AuthorID              string  `json:"author_fullname,omitempty"`
+	Permalink             string  `json:"permalink,omitempty"`
+	URL                   string  `json:"url,omitempty"`
+	SelfText              string  `json:"selftext,omitempty"`
+	SelfTextHTML          string  `json:"selftext_html,omitempty"`
+	Score                 int     `json:"score,omitempty"`
+	Ups                   int     `json:"ups,omitempty"`
+	Downs                 int     `json:"downs,omitempty"`
+	NumComments           int     `json:"num_comments,omitempty"`
+	Created               float64 `json:"created,omitempty"`
+	CreatedUTC            float64 `json:"created_utc,omitempty"`
+	Over18                bool    `json:"over_18,omitempty"`
+	IsSelf                bool    `json:"is_self,omitempty"`
+	IsVideo               bool    `json:"is_video,omitempty"`
+	Thumbnail             string  `json:"thumbnail,omitempty"`
+	Domain                string  `json:"domain,omitempty"`
+	// ...add more fields as needed
+}
+
 // Post is a submitted post on Reddit.
 type Post struct {
 	ID      string     `json:"id,omitempty"`
@@ -601,8 +628,9 @@ type Post struct {
 	Saved      bool `json:"saved"`
 	Stickied   bool `json:"stickied"`
 
-	MediaMetadata map[string]MediaMetadata `json:"media_metadata,omitempty"`
-	SecureMedia   *SecureMedia             `json:"secure_media,omitempty"`
+	CrosspostParentList []*CrosspostParent       `json:"crosspost_parent_list,omitempty"`
+	MediaMetadata       map[string]MediaMetadata `json:"media_metadata,omitempty"`
+	SecureMedia         *SecureMedia             `json:"secure_media,omitempty"`
 }
 
 // Subreddit holds information about a subreddit
