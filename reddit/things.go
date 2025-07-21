@@ -620,6 +620,7 @@ type Post struct {
 
 	Permalink string `json:"permalink,omitempty"`
 	URL       string `json:"url,omitempty"`
+	Domain    string `json:"domain,omitempty"`
 
 	Title string `json:"title,omitempty"`
 	Body  string `json:"selftext,omitempty"`
@@ -646,11 +647,13 @@ type Post struct {
 	IsSelfPost bool `json:"is_self"`
 	Saved      bool `json:"saved"`
 	Stickied   bool `json:"stickied"`
+	IsVideo    bool `json:"is_video"`
 
 	CrosspostParentList []*CrosspostParent       `json:"crosspost_parent_list,omitempty"`
 	MediaMetadata       map[string]MediaMetadata `json:"media_metadata,omitempty"`
 	SecureMedia         *SecureMedia             `json:"secure_media,omitempty"`
 	Preview             *Preview                 `json:"preview,omitempty"`
+	Thumbnail           string                   `json:"thumbnail,omitempty"`
 }
 
 // Subreddit holds information about a subreddit
