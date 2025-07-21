@@ -584,29 +584,30 @@ type PreviewImageSource struct {
 }
 
 type CrosspostParent struct {
-	ID                    string  `json:"id,omitempty"`
-	FullID                string  `json:"name,omitempty"`
-	Subreddit             string  `json:"subreddit,omitempty"`
-	SubredditID           string  `json:"subreddit_id,omitempty"`
-	SubredditNamePrefixed string  `json:"subreddit_name_prefixed,omitempty"`
-	Title                 string  `json:"title,omitempty"`
-	Author                string  `json:"author,omitempty"`
-	AuthorID              string  `json:"author_fullname,omitempty"`
-	Permalink             string  `json:"permalink,omitempty"`
-	URL                   string  `json:"url,omitempty"`
-	SelfText              string  `json:"selftext,omitempty"`
-	SelfTextHTML          string  `json:"selftext_html,omitempty"`
-	Score                 int     `json:"score,omitempty"`
-	Ups                   int     `json:"ups,omitempty"`
-	Downs                 int     `json:"downs,omitempty"`
-	NumComments           int     `json:"num_comments,omitempty"`
-	Created               float64 `json:"created,omitempty"`
-	CreatedUTC            float64 `json:"created_utc,omitempty"`
-	Over18                bool    `json:"over_18,omitempty"`
-	IsSelf                bool    `json:"is_self,omitempty"`
-	IsVideo               bool    `json:"is_video,omitempty"`
-	Thumbnail             string  `json:"thumbnail,omitempty"`
-	Domain                string  `json:"domain,omitempty"`
+	ID                    string   `json:"id,omitempty"`
+	FullID                string   `json:"name,omitempty"`
+	Subreddit             string   `json:"subreddit,omitempty"`
+	SubredditID           string   `json:"subreddit_id,omitempty"`
+	SubredditNamePrefixed string   `json:"subreddit_name_prefixed,omitempty"`
+	Title                 string   `json:"title,omitempty"`
+	Author                string   `json:"author,omitempty"`
+	AuthorID              string   `json:"author_fullname,omitempty"`
+	Permalink             string   `json:"permalink,omitempty"`
+	URL                   string   `json:"url,omitempty"`
+	SelfText              string   `json:"selftext,omitempty"`
+	SelfTextHTML          string   `json:"selftext_html,omitempty"`
+	Score                 int      `json:"score,omitempty"`
+	Ups                   int      `json:"ups,omitempty"`
+	Downs                 int      `json:"downs,omitempty"`
+	NumComments           int      `json:"num_comments,omitempty"`
+	Created               float64  `json:"created,omitempty"`
+	CreatedUTC            float64  `json:"created_utc,omitempty"`
+	Over18                bool     `json:"over_18,omitempty"`
+	IsSelf                bool     `json:"is_self,omitempty"`
+	IsVideo               bool     `json:"is_video,omitempty"`
+	Thumbnail             string   `json:"thumbnail,omitempty"`
+	Domain                string   `json:"domain,omitempty"`
+	Preview               *Preview `json:"preview,omitempty"`
 	// ...add more fields as needed
 }
 
