@@ -535,18 +535,19 @@ type RedditVideo struct {
 }
 
 type OEmbed struct {
-	AuthorName     string `json:"author_name,omitempty"`
-	AuthorURL      string `json:"author_url,omitempty"`
-	Height         int    `json:"height,omitempty"`
-	Width          int    `json:"width,omitempty"`
-	HTML           string `json:"html,omitempty"`
-	ProviderName   string `json:"provider_name,omitempty"`
-	ProviderUrl    string `json:"provider_url,omitempty"`
-	ThumbnailURL   string `json:"thumbnail_url,omitempty"`
-	ThumbnailWidth int    `json:"thumbnail_width,omitempty"`
-	Title          string `json:"title,omitempty"`
-	Type           string `json:"type,omitempty"`
-	Version        string `json:"version,omitempty"`
+	AuthorName      string `json:"author_name,omitempty"`
+	AuthorURL       string `json:"author_url,omitempty"`
+	Height          int    `json:"height,omitempty"`
+	Width           int    `json:"width,omitempty"`
+	HTML            string `json:"html,omitempty"`
+	ProviderName    string `json:"provider_name,omitempty"`
+	ProviderUrl     string `json:"provider_url,omitempty"`
+	ThumbnailURL    string `json:"thumbnail_url,omitempty"`
+	ThumbnailWidth  int    `json:"thumbnail_width,omitempty"`
+	ThumbnailHeight int    `json:"thumbnail_height,omitempty"`
+	Title           string `json:"title,omitempty"`
+	Type            string `json:"type,omitempty"`
+	Version         string `json:"version,omitempty"`
 }
 
 type SecureMedia struct {
