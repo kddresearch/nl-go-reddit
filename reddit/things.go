@@ -435,6 +435,8 @@ type Comment struct {
 	NSFW        bool `json:"over_18"`
 
 	Replies Replies `json:"replies"`
+
+	MediaMetadata map[string]MediaMetadata `json:"media_metadata,omitempty"`
 }
 
 // HasMore determines whether the comment has more replies to load in its reply tree.
