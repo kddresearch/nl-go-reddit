@@ -565,6 +565,24 @@ type MediaMetadata struct {
 	} `json:"s"`
 }
 
+type Preview struct {
+	Images  []PreviewImage `json:"images"`
+	Enabled bool           `json:"enabled"`
+}
+
+type PreviewImage struct {
+	Source      PreviewImageSource     `json:"source"`
+	Resolutions []PreviewImageSource   `json:"resolutions"`
+	Variants    map[string]interface{} `json:"variants"` // can be more specific if needed
+	ID          string                 `json:"id"`
+}
+
+type PreviewImageSource struct {
+	URL    string `json:"url"`
+	Width  int    `json:"width"`
+	Height int    `json:"height"`
+}
+
 type CrosspostParent struct {
 	ID                    string  `json:"id,omitempty"`
 	FullID                string  `json:"name,omitempty"`
@@ -631,6 +649,7 @@ type Post struct {
 	CrosspostParentList []*CrosspostParent       `json:"crosspost_parent_list,omitempty"`
 	MediaMetadata       map[string]MediaMetadata `json:"media_metadata,omitempty"`
 	SecureMedia         *SecureMedia             `json:"secure_media,omitempty"`
+	Preview             *Preview                 `json:"preview,omitempty"`
 }
 
 // Subreddit holds information about a subreddit
