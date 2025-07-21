@@ -537,6 +537,7 @@ type RedditVideo struct {
 type OEmbed struct {
 	AuthorName      string `json:"author_name,omitempty"`
 	AuthorURL       string `json:"author_url,omitempty"`
+	Description     string `json:"description,omitempty"`
 	Height          int    `json:"height,omitempty"`
 	Width           int    `json:"width,omitempty"`
 	HTML            string `json:"html,omitempty"`
